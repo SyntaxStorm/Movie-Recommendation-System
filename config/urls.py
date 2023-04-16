@@ -39,6 +39,5 @@ urlpatterns = [
     path('films/', include('apps.films.urls')),
     path('users/', include('apps.users.urls')),
     path('feedback/', include('apps.feedback.urls')),
-    path('swagger/', schema_view.with_ui('swagger')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

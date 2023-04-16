@@ -24,7 +24,7 @@ class Film(models.Model):
         return f'{self.title} --> {"Release-year"} -- {self.release_year}'
 
 
-class View(models.Model):
+class WatchedFilm(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='views')
     film = models.ForeignKey(Film, on_delete=models.CASCADE, related_name='views')
     date = models.DateTimeField(default=timezone.now)

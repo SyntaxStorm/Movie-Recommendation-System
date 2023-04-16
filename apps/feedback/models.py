@@ -28,6 +28,7 @@ class Rating(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='ratings')
     film = models.ForeignKey(Film, on_delete=models.CASCADE, related_name='ratings')
     rating = models.SmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)], null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f'{self.user} - {"поставил рейтинг - фильму"} {self.rating}'
