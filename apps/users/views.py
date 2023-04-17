@@ -36,6 +36,7 @@ class LogoutAPIView(APIView):
 class ChangePasswordView(APIView):
     def post(self, request):
         serializer = ChangePasswordSerializer(data=request.data)
+        print('1')
         if serializer.is_valid():
             login = serializer.validated_data['login']
             new_password = serializer.validated_data['new_password']
